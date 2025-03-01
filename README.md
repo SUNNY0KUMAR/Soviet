@@ -13,6 +13,7 @@ This project is a web-based simulation of a Soviet-era citizen evaluation form. 
 ```
 /project-root
 │── index.html           # Main registration form
+│── loading.html         # Page for loading
 │── safe.html            # Page for loyal citizens
 │── siberia.html         # Page for harsh labor camps
 │── mines.html           # Page for forced labor in gold mines
