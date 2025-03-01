@@ -1,15 +1,16 @@
-Soviet Gulag Registration Form
-A historically inspired interactive web project simulating a Soviet-era citizen evaluation form. Users fill out a form, and based on their responses, they are redirected to different outcomes, including labor camps, mines, or safe passage.
+# Soviet Gulag Registration Form  
 
-📜 Features
-✅ Interactive Form – Users answer questions about their background, political views, and occupation.
-✅ Dynamic Outcome Pages – Depending on user choices, they are redirected to different pages.
-✅ Dark Historical Theme – The design and wording reflect a satirical take on Soviet-era bureaucracy.
+This project is a web-based simulation of a Soviet-era citizen evaluation form. Users fill out the form, and based on their responses, they are redirected to different outcomes, including labor camps, mines, or safe passage.  
 
-📂 File Structure
-bash
-Copy
-Edit
+## Features  
+
+- Interactive form where users provide personal, political, and social details  
+- Dynamic redirection to different pages based on user responses  
+- Historically themed design and content  
+
+## File Structure  
+
+```
 /project-root
 │── index.html           # Main registration form
 │── safe.html            # Page for loyal citizens
@@ -20,14 +21,17 @@ Edit
 │── style.css            # Styling for the form and pages
 │── app.js               # Handles form submission and redirects
 │── README.md            # Project documentation
-🚀 How to Run
-Clone the repository:
-bash
-Copy
-Edit
-git clone https://github.com/your-username/gulag-form.git
-Open index.html in your browser.
-Fill out the form and submit to see your fate!
-⚠️ Disclaimer
-This project is a historical satire and should not be taken as political commentary. It is created purely for educational and creative purposes.
+```  
 
+## How to Run  
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/your-username/gulag-form.git
+   ```  
+2. Open **index.html** in a web browser  
+3. Complete the form and submit it to see the outcome  
+
+## Disclaimer  
+
+This project is a historical satire created for educational and creative purposes. It does not promote or support any political ideology.
