@@ -27,7 +27,7 @@ This project is a web-based simulation of a Soviet-era citizen evaluation form. 
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/gulag-form.git
+   git clone https://github.com/SUNNY0KUMAR/gulag-form.git
    ```  
 2. Open **index.html** in a web browser  
 3. Complete the form and submit it to see the outcome  
