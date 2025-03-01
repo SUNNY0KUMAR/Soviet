@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         else if (party === "no" || stalinCriticism === "yes" || crimes.includes("treason") || crimes.includes("espionage")) {
             resultPage = "siberia.html"; 
         } else if (occupation === "former_noble" || crimes.includes("religion")) {
-            resultPage = "mines.html"; 
+            resultPage = "mine.html"; 
         } else if (rehabilitation === "refuse") {
             resultPage = "execution.html";
         }
