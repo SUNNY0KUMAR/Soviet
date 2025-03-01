@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exiled to Siberia</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #7b0000;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0;
+            padding: 1rem;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #5a0000;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #9a0000;
+            text-decoration: none;
+        }
+
+        /* Content Styling */
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #7b0000;
+            border-bottom: 2px solid #7b0000;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            color: #7b0000;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+
+        strong {
+            font-weight: bold;
+            color: #7b0000;
+        }
+
+        /* Image Container */
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .caption {
+            font-style: italic;
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #7b0000;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #7b0000;
+        }
+
+        /* Stats Box */
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            flex-basis: 22%;
+            text-align: center;
+            padding: 20px 10px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #7b0000;
+            margin-bottom: 10px;
+        }
+
+        .stat-description {
+            font-size: 0.9rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: #7b0000;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: calc(50% - 40px);
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid #7b0000;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: #7b0000;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Regions Section */
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .region-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .region-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .region-content {
+            padding: 15px;
+        }
+
+        .region-title {
+            color: #7b0000;
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .left, .right {
+                left: 0;
+                padding-left: 50px;
+            }
+            
+            .left::after, .right::after {
+                left: 10px;
+            }
+
+            .stat-box {
+                flex-basis: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-box {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exiled to Siberia</h1>
+        <h2 style="color: white;
+        text-align: center;
+        margin: 0;
+        padding: 1rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;">Survival was never guaranteed</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mines.html">Mines</a>
+            <a href="canal.html">Canal</a>
+            <a href="execution.html">Execution</a>
+        </nav>
+    </header>
+    
+    <h2>Daily Life in Exile</h2>
+    
+    <h3>Daily Routine</h3>
+    <ol>
+        <li><strong>4:00 AM</strong> - Wake-up call</li>
+        <li><strong>4:30 AM</strong> - Roll call regardless of weather</li>
+        <li><strong>5:00 AM</strong> - Breakfast (thin gruel or bread)</li>
+        <li><strong>5:30 AM</strong> - March to work site, often kilometers away</li>
+        <li><strong>6:00 AM</strong> - Begin labor shift</li>
+        <li><strong>1:00 PM</strong> - Brief break for lunch (soup with occasional fish or vegetables)</li>
+        <li><strong>7:00 PM</strong> - End work and return to camp</li>
+        <li><strong>8:00 PM</strong> - Evening meal (bread ration based on work performance)</li>
+        <li><strong>10:00 PM</strong> - Lights out</li>
+    </ol>
+    
+    <h3>Survival Strategies</h3>
+    <p>
+        Those who survived the brutal conditions often relied on a combination of factors:
+    </p>
+    <ul>
+        <li><strong>Strong social bonds</strong> with other prisoners, forming groups for mutual protection and resource sharing</li>
+        <li><strong>Specialized skills</strong> that could earn placement in less physically demanding indoor work</li>
+        <li><strong>Mental resilience</strong> and the ability to psychologically detach from immediate surroundings</li>
+        <li><strong>Learning to navigate camp politics</strong> and developing relationships with those in positions of relative power</li>
+        <li><strong>Adapting quickly</strong> to the unwritten rules and social hierarchies within the camp system</li>
+    </ul>
+    
+    <p>
+        <strong>Survival was never guaranteed.</strong> Even the strongest and most resilient prisoners faced a daily battle against cold, hunger, exhaustion, and disease. Those who survived often carried physical and psychological scars for the remainder of their lives. Many who were eventually released found themselves unable to reintegrate into society, forever marked by their time in the "frozen wasteland" of Siberian exile.
+    </p>
+    </div>
+    <div class="content">
+        <div class="image-container">
+            <img src="images/siberia.jpg" alt="Siberian labor camp">
+            <p class="caption">Prisoners arriving at a Siberian labor camp during winter, circa 1940s</p>
+        </div>
+
+        <h2>The Frozen Wasteland</h2>
+        <p>
+            <strong>Siberia</strong>—a vast, unforgiving territory spanning over 13 million square kilometers—became the Soviet Union's most notorious prison without walls. This remote region, characterized by extreme cold, dense forests, and sparse population, was transformed into a vast network of labor camps where millions were exiled as <strong>enemies of the state</strong>.
+        </p>
+        
+        <p>
+            The journey to Siberian exile was itself a form of torture. Prisoners were crammed into <strong>cattle trains</strong> with little food, water, or sanitation. These transports, known as <strong>"Stolypin cars,"</strong> could take weeks to reach their remote destinations. Many prisoners died during transit from disease, exposure, or starvation before even reaching the camps.
+        </p>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">-72°C</div>
+                <div class="stat-description">Record low temperature in Siberian regions</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">12+</div>
+                <div class="stat-description">Hours of daily forced labor</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">300g</div>
+                <div class="stat-description">Daily bread ration for most prisoners</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">30%</div>
+                <div class="stat-description">Mortality rate in harshest camps</div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <p>"We were thrown into cattle cars, 80 people per car. There was a small barred window and a hole in the floor for a toilet. For 52 days we traveled this way... Many died before reaching Siberia."</p>
+            <div class="quote-author">— Evgenia Ginzburg, Gulag survivor</div>
+        </div>
+
+        <h3>What Awaits You?</h3>
+        <ul>
+            <li><strong>Extreme Cold</strong>: Temperatures regularly drop below -50°C, with winter lasting up to 9 months. Frostbite and hypothermia were common causes of death and disability. Prisoners worked outdoors regardless of temperature, stopping only when it fell below -40°C.</li>
+            <li><strong>Backbreaking Labor</strong>: Prisoners were forced to work 12-14 hour days in mining, logging, railroad construction, or industrial projects. Work quotas were deliberately set beyond human capacity, ensuring most prisoners failed to meet them and received reduced rations.</li>
+            <li><strong>Starvation Rations</strong>: Food allocations were tied to work output. The standard daily ration included 300g of black bread, thin soup, and occasional fish or porridge—providing only 1,200-1,800 calories despite the extreme physical demands and cold.</li>
+            <li><strong>Inadequate Shelter</strong>: Barracks were overcrowded, unheated, and infested with lice and bedbugs. In some camps, prisoners had to build their own housing after arrival, sleeping outdoors until construction was completed.</li>
+            <li><strong>Disease and Minimal Medical Care</strong>: Tuberculosis, scurvy, pellagra, and dysentery were rampant. Medical facilities were primitive, with few medications and untrained personnel.</li>
+        </ul>
+
+        <h2>Major Siberian Camp Regions</h2>
+        
+        <div class="region-grid">
+            <div class="region-card">
+                <img src="/api/placeholder/400/200" alt="Kolyma region">
+                <div class="region-content">
+                    <h3 class="region-title">Kolyma</h3>
+                    <p>Known as the "Land of White Death," Kolyma was the most dreaded destination. Gold mining operations here had the highest mortality rates. Located in the Far East, prisoners had to endure sea transport through the Arctic Ocean to reach it.</p>
+                </div>
+            </div>
+            
+            <div class="region-card">
+                <img src="/api/placeholder/400/200" alt="Norilsk region">
+                <div class="region-content">
+                    <h3 class="region-title">Norilsk</h3>
+                    <p>One of the northernmost cities in the world, built entirely by Gulag prisoners for nickel and copper mining. With nine months of winter and two months of polar night, conditions were extremely harsh.</p>
+                </div>
+            </div>
+            
+            <div class="region-card">
+                <img src="/api/placeholder/400/200" alt="Vorkuta region">
+                <div class="region-content">
+                    <h3 class="region-title">Vorkuta</h3>
+                    <p>A coal mining center located north of the Arctic Circle. The area was so remote that escape was virtually impossible, surrounded by hundreds of miles of tundra with nowhere to hide.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Timeline of Siberian Exile</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-date">1930-1933</div>
+                <h3>Mass Deportations</h3>
+                <p>The first wave of mass deportations to Siberia targeted "kulaks" (wealthy peasants) who resisted collectivization. Entire families were exiled to special settlements.</p>
+            </div>
+            
+            <div class="timeline-item right">
+                <div class="timeline-date">1937-1938</div>
+                <h3>Great Terror</h3>
+                <p>During Stalin's purges, Siberian camps expanded rapidly. New industrial complexes were established in remote regions, built and operated entirely by prison labor.</p>
+            </div>
+            
+            <div class="timeline-item left">
+                <div class="timeline-date">1940-1946</div>
+                <h3>Wartime Expansion</h3>
+                <p>WWII led to further expansion of Siberian camps. Prisoners of war, ethnic minorities from border regions, and anyone suspected of collaboration were sent east.</p>
+            </div>
+            
+            <div class="timeline-item right">
+                <div class="timeline-date">1953-1956</div>
+                <h3>Mass Releases</h3>
+                <p>Following Stalin's death, millions were gradually released from Siberian exile, though many had nowhere to return to after years or decades away.</p>
+            </div>
+        </div>
+
+
+    <footer>
+        <p>Historical Research | Educational Purposes Only</p>
+        <p>This site is dedicated to documenting the experiences of those who suffered under the Soviet exile system.</p>
+    </footer>
+</body>
+</html>

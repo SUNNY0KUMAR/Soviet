@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execution Chamber</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #292929;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0;
+            padding: 1rem;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1a1a1a;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #444;
+            text-decoration: none;
+        }
+
+        /* Content Styling */
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #292929;
+            border-bottom: 2px solid #292929;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            color: #292929;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            font-weight: bold;
+            color: #292929;
+        }
+
+        /* Image Container */
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .caption {
+            font-style: italic;
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #292929;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #292929;
+        }
+
+        /* Stats Container */
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            flex-basis: 22%;
+            text-align: center;
+            padding: 20px 10px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #292929;
+            margin-bottom: 10px;
+        }
+
+        .stat-description {
+            font-size: 0.9rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #292929;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid #292929;
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .timeline-left {
+            left: 0;
+        }
+
+        .timeline-right {
+            left: 50%;
+        }
+
+        .timeline-left::after {
+            right: -12px;
+        }
+
+        .timeline-right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-time {
+            font-weight: bold;
+            color: #292929;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+            }
+            
+            .stat-box {
+                flex-basis: 45%;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .timeline-right {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-box {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Execution Chamber</h1>
+        <h2 style="color: white; text-align: center; margin: 0; padding: 1rem; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px;">The final moments of the condemned</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="siberia.html">Siberia</a>
+            <a href="mines.html">Mines</a>
+            <a href="canal.html">Canal</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="image-container">
+            <img src="images/execution.jpg" alt="NKVD execution chamber">
+            <p class="caption">NKVD officers prepare for executions at Lubyanka Prison, Moscow, 1937</p>
+        </div>
+        
+        <h2>The Final Judgment</h2>
+        <p>
+            <strong>You have been accused of being an "enemy of the people."</strong> Perhaps you spoke critically of the government, perhaps you were denounced by a neighbor, or perhaps your name simply appeared on a list. The reason no longer matters. You now stand before a troika—a three-person tribunal with the power of life and death.
+        </p>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">5</div>
+                <div class="stat-description">Minutes for your entire trial</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">7.8K</div>
+                <div class="stat-description">Executions per day during Great Purge</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0%</div>
+                <div class="stat-description">Acquittal rate in political cases</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">681K</div>
+                <div class="stat-description">Executions in 1937-1938 alone</div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <p>"I was permitted no defense counsel, no final word, not even the dignity of understanding the specific charges. The entire proceeding lasted perhaps seven minutes. When the sentence was read, I felt nothing. I had already died inside days ago when they first took me."</p>
+            <div class="quote-author">— From the smuggled memoir of Ivan Denisovich, executed 1938</div>
+        </div>
+
+        <h3>The Machinery of Death</h3>
+        <p>
+            Your trial is a mockery of justice. The verdict has been predetermined, the outcome assured. You stand, barely able to remain upright after days of interrogation and torture. The chairman reads the charges monotonously—Article 58, "Counter-revolutionary Activities," a catchall for any perceived disloyalty. No evidence is presented. Your confession, extracted under duress, is all they need. When the sentence is announced—"Execution by firing squad, to be carried out immediately"—you feel a strange sense of relief. The uncertainty is over.
+        </p>
+
+        <h3>The Final Journey</h3>
+        <div class="timeline">
+            <div class="timeline-item timeline-left">
+                <div class="timeline-content">
+                    <div class="timeline-time">7:00 PM</div>
+                    <p>You are led from the courtroom, hands bound behind your back. The guards grip your arms tightly as you descend into the basement levels. The air grows colder, damper with each step.</p>
+                </div>
+            </div>
+            <div class="timeline-item timeline-right">
+                <div class="timeline-content">
+                    <div class="timeline-time">7:15 PM</div>
+                    <p>You are placed in a holding cell with others condemned to die tonight. Some weep quietly, others stare vacantly. A few pray. An elderly man tells you to remove your belt—"They'll take it anyway, and it's better to go with dignity."</p>
+                </div>
+            </div>
+            <div class="timeline-item timeline-left">
+                <div class="timeline-content">
+                    <div class="timeline-time">8:30 PM</div>
+                    <p>The execution chamber is prepared. It is a simple room with a drain in the floor and walls lined with wood and sandbags to absorb bullets. The executioners ready their Nagant revolvers and review the list of names.</p>
+                </div>
+            </div>
+            <div class="timeline-item timeline-right">
+                <div class="timeline-content">
+                    <div class="timeline-time">9:45 PM</div>
+                    <p>Your name is called. Two guards take you by the arms and lead you down a short corridor. Your legs move automatically. A strange calm descends—the inevitability of what comes next has emptied you of fear.</p>
+                </div>
+            </div>
+            <div class="timeline-item timeline-left">
+                <div class="timeline-content">
+                    <div class="timeline-time">9:50 PM</div>
+                    <p>You enter the room. It smells of damp stone, gunpowder, and copper. An officer reads your sentence again, mechanically. Behind him stands another officer with a pistol already drawn. You are positioned facing the wall.</p>
+                </div>
+            </div>
+            <div class="timeline-item timeline-right">
+                <div class="timeline-content">
+                    <div class="timeline-time">9:51 PM</div>
+                    <p>The final words you hear: "For the Motherland." A flash, a deafening sound, then nothing. Your existence is erased—not just your life, but in time, all evidence you ever lived at all.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>The Aftermath</h3>
+        <p>
+            Your body is loaded onto a truck with dozens of others, taken to a mass grave outside the city. No marker will indicate where you lie. Your family will never learn your fate—only that you "disappeared." Your name will be stricken from official records, your photograph removed from family albums by frightened relatives. In the most comprehensive erasure in human history, the state will not only end your life but attempt to erase all memory of your existence.
+        </p>
+
+        <p>
+            <strong>Decades later, researchers will uncover records of these killings.</strong> They will find that execution was so routine it became industrialized—officers worked in shifts to process hundreds of people each night. Executioners received bonuses for exceeding quotas. Some facilities installed sloped concrete floors and drainage systems to handle the volume of blood. Your death was not personal—it was production-line terror designed to reinforce absolute obedience through fear.
+        </p>
+    </div>
+
+    <footer>
+        <p>Historical Research | Educational Purposes Only</p>
+        <p>This site documents the experiences of victims of Soviet political executions.</p>
+    </footer>
+</body>
+</html>

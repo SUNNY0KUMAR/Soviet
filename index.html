@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soviet Gulag Registration Form</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #7b0000;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 1rem;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        h2 {
+            color: #7b0000;
+            border-bottom: 2px solid #7b0000;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        header h2 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #5a0000;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #9a0000;
+            text-decoration: none;
+        }
+
+        /* Content Styling */
+        .intro, .form-container, .warnings {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro p, .warnings p {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Form Styling */
+        form {
+            margin-top: 2rem;
+        }
+
+        label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #7b0000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #9a0000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Bold text */
+        strong {
+            font-weight: bold;
+            color: #7b0000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SOVIET STATE SECURITY COMMITTEE</h1>
+        <h2>Department of National Rehabilitation & Correctional Labor</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="life.html">Life in Gulag</a>
+            <a href="projects.html">Projects</a>
+            <a href="legacy.html">Legacy</a>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h2>OFFICIAL CITIZEN EVALUATION FORM</h2>
+        <p>
+            <strong>Comrade!</strong>  
+            You have been selected for <strong>State Evaluation</strong>.  
+            Please <strong>answer truthfully</strong>. Any <strong>false or misleading responses</strong> may result in <strong>severe consequences</strong>.
+        </p>
+    </section>
+
+    <section class="form-container">
+        <h2>PART I: PERSONAL INFORMATION</h2>
+        <form>
+            <label for="name">Full Name (as registered with the Soviet State):</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="nationality">Nationality:</label>
+            <select id="nationality" name="nationality">
+                <option value="russian">Russian</option>
+                <option value="ukrainian">Ukrainian</option>
+                <option value="belarusian">Belarusian</option>
+                <option value="tatar">Tatar</option>
+                <option value="jewish">Jewish</option>
+                <option value="other">Other</option>
+            </select>
+
+            <h2>PART II: FAMILY BACKGROUND</h2>
+
+            <label for="family">Do you have any family members who were arrested for political crimes? (Check all that apply)</label><br>
+            <input type="checkbox" id="father" name="family" value="father">
+            <label for="father">Father</label>
+            <input type="checkbox" id="mother" name="family" value="mother">
+            <label for="mother">Mother</label>
+            <input type="checkbox" id="siblings" name="family" value="siblings">
+            <label for="siblings">Siblings</label>
+            <input type="checkbox" id="none" name="family" value="none">
+            <label for="none">No known arrests</label>
+
+            <h2>PART III: POLITICAL AFFILIATIONS</h2>
+
+            <label for="party">Are you a member of the Communist Party?</label>
+            <select id="party" name="party">
+                <option value="yes">Yes, a loyal member</option>
+                <option value="no">No (Highly suspicious)</option>
+            </select>
+
+            <label>Have you ever spoken critically about Comrade Stalin or Soviet leadership?</label><br>
+            <input type="radio" id="never" name="stalin_criticism" value="never">
+            <label for="never">Never, I love Stalin</label><br>
+            <input type="radio" id="maybe" name="stalin_criticism" value="maybe">
+            <label for="maybe">Maybe, but only in private</label><br>
+            <input type="radio" id="yes" name="stalin_criticism" value="yes">
+            <label for="yes">Yes (Highly dangerous response)</label><br>
+
+            <h2>PART IV: EMPLOYMENT AND SOCIAL STATUS</h2>
+
+            <label for="occupation">Occupation:</label>
+            <select id="occupation" name="occupation">
+                <option value="factory_worker">Factory Worker</option>
+                <option value="farmer">Farmer</option>
+                <option value="military">Military Officer</option>
+                <option value="government_official">Government Official</option>
+                <option value="journalist">Journalist (Warning: Suspected Counter-Revolutionary)</option>
+                <option value="former_noble">Former Noble (Extremely Dangerous)</option>
+            </select>
+
+            <h2>PART V: CRIMINAL RECORD</h2>
+
+            <label>Have you ever been accused of any of the following crimes? (Check all that apply)</label><br>
+            <input type="checkbox" id="espionage" name="crime" value="espionage">
+            <label for="espionage">Espionage (Spying for foreign powers)</label><br>
+            <input type="checkbox" id="treason" name="crime" value="treason">
+            <label for="treason">Treason against the Soviet State</label><br>
+            <input type="checkbox" id="religion" name="crime" value="religion">
+            <label for="religion">Practicing religious beliefs (Anti-Soviet activity)</label><br>
+            <input type="checkbox" id="none_crime" name="crime" value="none">
+            <label for="none_crime">No crimes committed</label>
+
+            <h2>PART VI: FINAL DECLARATION</h2>
+
+            <label>Do you agree to submit yourself to the Soviet Rehabilitation Program if deemed necessary?</label><br>
+            <input type="radio" id="agree" name="rehabilitation" value="agree" required>
+            <label for="agree">Yes, I accept my fate.</label><br>
+            <input type="radio" id="refuse" name="rehabilitation" value="refuse">
+            <label for="refuse">No (Failure to comply will result in automatic reassessment by NKVD)</label><br>
+
+            <button type="submit">Submit Form</button>
+        </form>
+    </section>
+
+    <section class="warnings">
+        <h2>IMPORTANT NOTICE</h2>
+        <p>
+            <strong>WARNING:</strong> All responses will be reviewed by the State Security Committee.  
+            Any <strong>false statements</strong> or <strong>deviation from Soviet principles</strong> will result in <strong>immediate correctional measures</strong>.  
+            <strong>Failure to submit this form is considered an act of treason.</strong>  
+            <br><br>
+            Report all <strong>suspicious individuals</strong> to your local NKVD office.  
+        </p>
+    </section>
+
+    <footer>
+        <p>© 1937 Soviet Government - All rights reserved.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

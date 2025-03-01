@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loyal Soviet Citizen</title>
+        <style>
+            /* Base Styling */
+            body {
+                font-family: 'Arial', sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            
+            .safe-page {
+                background-color: #f5f5f5;
+                background-image: url('/api/placeholder/100/100');
+                background-repeat: repeat;
+                background-blend-mode: overlay;
+            }
+
+            /* Header Styling */
+            header {
+                background-color: #b30000;
+                color: white;
+                padding: 1.5rem 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                text-align: center;
+            }
+
+            h1 {
+                margin: 0;
+                padding: 1rem;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            
+            header h2 {
+                margin: 0;
+                padding: 0.5rem;
+                font-size: 1.5rem;
+                color: #ffcc00;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                border-bottom: none;
+            }
+
+            /* Navigation */
+            nav {
+                display: flex;
+                justify-content: center;
+                background-color: #8b0000;
+                padding: 1rem 0;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin: 0 15px;
+                padding: 8px 15px;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background-color 0.3s;
+            }
+
+            nav a:hover {
+                background-color: #cc0000;
+                text-decoration: none;
+            }
+
+            /* Content Styling */
+            .safe-message {
+                max-width: 800px;
+                margin: 2rem auto;
+                padding: 2rem;
+                background-color: white;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                border: 5px solid #b30000;
+                border-radius: 10px;
+                position: relative;
+            }
+            
+            .safe-message:before {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                border: 2px dashed #ffcc00;
+                border-radius: 5px;
+                pointer-events: none;
+            }
+
+            h2 {
+                color: #b30000;
+                text-align: center;
+                padding-bottom: 0.5rem;
+                margin-top: 1.5rem;
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                color: #b30000;
+                margin-top: 1.5rem;
+                border-left: 5px solid #b30000;
+                padding-left: 10px;
+                background-color: #fff9e6;
+            }
+
+            p {
+                text-align: justify;
+                margin-bottom: 1.5rem;
+                font-size: 1.1rem;
+            }
+
+            strong {
+                font-weight: bold;
+                color: #b30000;
+            }
+
+            /* Image Container */
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                margin: 1.5rem auto;
+                border: 3px solid #b30000;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Lists */
+            ul {
+                margin-bottom: 1.5rem;
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 1rem;
+                padding: 10px;
+                background-color: #fff9e6;
+                border-left: 5px solid #ffcc00;
+                font-size: 1.05rem;
+            }
+            
+            .final-message {
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin: 2rem 0;
+                padding: 15px;
+                background-color: #b30000;
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                border-radius: 5px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Stamp design */
+            .stamp {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 120px;
+                height: 120px;
+                background-color: rgba(179, 0, 0, 0.2);
+                border: 3px solid #b30000;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: rotate(15deg);
+            }
+            
+            .stamp-inner {
+                text-align: center;
+                font-weight: bold;
+                color: #b30000;
+                line-height: 1.2;
+                font-size: 0.9rem;
+            }
+
+            /* Footer */
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 1.5rem 0;
+                margin-top: 2rem;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                nav {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                nav a {
+                    margin: 5px 0;
+                    width: 80%;
+                    text-align: center;
+                }
+                
+                .stamp {
+                    width: 80px;
+                    height: 80px;
+                    font-size: 0.7rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 1.8rem;
+                }
+                
+                .safe-message {
+                    padding: 1.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body class="safe-page">
+        <header>
+            <h1>STATE SECURITY COMMITTEE</h1>
+            <h2>Recognition of Your Loyalty to the Soviet Union</h2>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="history.html">History</a>
+                <a href="life.html">Life in Gulag</a>
+                <a href="projects.html">Projects</a>
+                <a href="legacy.html">Legacy</a>
+            </nav>
+        </header>
+        
+        <section class="safe-message">
+            <div class="stamp">
+                <div class="stamp-inner">
+                    APPROVED<br>
+                    NKVD<br>
+                    1937
+                </div>
+            </div>
+            
+            <h2>🔴 <strong>CONGRATULATIONS, COMRADE!</strong> 🔴</h2>
+            <p>
+                Your responses have been carefully evaluated by the <strong>State Security Committee</strong>.  
+                After thorough review of your actions, statements, and associations, you have been 
+                declared a <strong>Loyal Soviet Citizen</strong> worthy of the Party's trust.
+            </p>
+            
+            <h3>✅ Your Status: TRUSTED COMRADE</h3>
+            <img src="/api/placeholder/600/300" alt="Glorious Soviet Union">
+            
+            <p>
+                The Soviet Union values your <strong>unwavering devotion</strong> and <strong>ideological purity</strong>.  
+                You are <strong>permitted to continue serving the glorious Soviet state</strong> and contribute 
+                to building our socialist paradise. Your loyalty shall be rewarded with continued 
+                access to state resources and protection.
+            </p>
+
+            <h3>⚠ <strong>OBLIGATIONS OF A LOYAL CITIZEN</strong> ⚠</h3>
+            <ul>
+                <li>📢 <strong>Report any suspicious individuals</strong> to the NKVD immediately. Counterrevolutionary elements 
+                may hide among us disguised as friends, family, or colleagues.</li>
+                
+                <li>📖 Continue studying <strong>Marxist-Leninist principles</strong> and attending all Party educational 
+                meetings. Ideological strength is the foundation of our revolution.</li>
+                
+                <li>🚀 Work hard for the <strong>advancement of Soviet industry and progress</strong>. Meet and exceed 
+                all production quotas to strengthen our socialist economy.</li>
+                
+                <li>🛑 Avoid all anti-Soviet propaganda and <strong>dissenting thoughts</strong>. Western influences seek 
+                to corrupt the minds of loyal citizens through dangerous ideas.</li>
+                
+                <li>🗣️ <strong>Encourage compliance</strong> among your peers and report instances of ideological wavering. 
+                A strong collective requires vigilance from all members.</li>
+            </ul>
+
+            <h3>🔎 <strong>Be Vigilant, Comrade!</strong></h3>
+            <p>
+                <strong>Even the most loyal citizens can falter.</strong> The enemies of the state are cunning and 
+                persistent in their attempts to undermine our great nation. Remain dedicated 
+                to the <strong>Party</strong> and <strong>Comrade Stalin</strong>, or face <strong>re-evaluation</strong> if suspicions arise.
+            </p>
+            
+            <p>
+                Remember that this certificate of loyalty is subject to regular review. Your continued 
+                freedom depends on maintaining the highest standards of revolutionary conduct.
+            </p>
+
+            <p class="final-message">🔴 <strong>LONG LIVE THE SOVIET UNION!</strong> 🔴</p>
+        </section>
+
+        <footer>
+            <p>© 1937 Soviet Government - All Rights Reserved</p>
+            <p>Authorized by Decree No. 794-3 of the Presidium of the Supreme Soviet</p>
+        </footer>
+    </body>
+</html>
